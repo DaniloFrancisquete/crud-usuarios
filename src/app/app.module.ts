@@ -11,7 +11,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore'
+import { environment } from '../environments/environment.development';
+import {AngularFireModule} from '@angular/fire/compat';
+import { CrudComponent } from './pages/crud/crud.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -20,16 +27,22 @@ import {MatIconModule} from '@angular/material/icon'
     LoginComponent,
     HomeComponent,
     MenuComponent,
+    CrudComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideFirebaseApp(() => initializeApp({"projectId":"crud-usuarios-angular-be9ff","appId":"1:85957822434:web:fa4850d4050eb711db5bbb","storageBucket":"crud-usuarios-angular-be9ff.appspot.com","apiKey":"AIzaSyDpdmSGgacI7EG1XHPvvN3gJaNgQkVNV1Q","authDomain":"crud-usuarios-angular-be9ff.firebaseapp.com","messagingSenderId":"85957822434"})),
+    provideFirestore(() => getFirestore())
   ],
   bootstrap: [AppComponent]
 })
