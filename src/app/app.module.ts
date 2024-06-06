@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ButtonComponent } from './components/button/button.component';
 import { LoginComponent } from './pages/login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 
@@ -22,6 +22,12 @@ import {MatInputModule} from '@angular/material/input';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
+import { ModalViewUserComponent } from './pages/crud/modal-view-user/modal-view-user.component';
+import{MatDialogModule} from '@angular/material/dialog';
+import { ModalFormUserComponent } from './pages/crud/modal-form-user/modal-form-user.component'
+import { MatSelectModule } from '@angular/material/select';
+
+
 
 @NgModule({
   declarations: [
@@ -31,6 +37,8 @@ import {MatTableModule} from '@angular/material/table';
     HomeComponent,
     MenuComponent,
     CrudComponent,
+    ModalViewUserComponent,
+    ModalFormUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +51,9 @@ import {MatTableModule} from '@angular/material/table';
     MatTableModule, 
     MatSortModule,
      MatPaginatorModule,
+     MatDialogModule,
+     ReactiveFormsModule,
+     MatSelectModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [
