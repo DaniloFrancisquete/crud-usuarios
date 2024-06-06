@@ -19,6 +19,9 @@ import {AngularFireModule} from '@angular/fire/compat';
 import { CrudComponent } from './pages/crud/crud.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import {MatInputModule} from '@angular/material/input';
     MatProgressSpinnerModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule, 
+    MatSortModule,
+     MatPaginatorModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [
