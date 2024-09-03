@@ -1,4 +1,5 @@
 export const environment = {
+production:true,
     firebaseConfig: {
         apiKey: "AIzaSyDpdmSGgacI7EG1XHPvvN3gJaNgQkVNV1Q",
         authDomain: "crud-usuarios-angular-be9ff.firebaseapp.com",
